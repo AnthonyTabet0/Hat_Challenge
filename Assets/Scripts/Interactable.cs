@@ -13,6 +13,8 @@ public class Interactable : MonoBehaviour
 
     public ObjectType _type;
 
+    public ParticleSystem _particleCloud;
+
     public int _value;
 
     internal Collider _collider;
@@ -23,6 +25,7 @@ public class Interactable : MonoBehaviour
     {
         _collider = GetComponentInChildren<Collider>();
         _animationClip = GetComponent<Animation>();
+        _particleCloud = GetComponentInChildren<ParticleSystem>();
         Vibration.Init();
     }
 

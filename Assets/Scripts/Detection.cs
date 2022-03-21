@@ -42,6 +42,11 @@ public class Detection : MonoBehaviour
             {
                 interactable._value = indexSibling; // Assign sibling index tp collided object's script
                 interactable.Operate(); // Call function in collided object's script
+                if (!interactable._particleCloud.isPlaying) // check if particle is playing
+                {
+                    interactable._particleCloud.transform.position = _hit.point; // set position to collision point
+                    interactable._particleCloud.Play(); // play effect
+                }
             }
         }
     }
